@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #FEEEE1;
+}
+
+.custom-container {
+        text-align: center;
+}
+
+.highlight {
+    background-color: yellow; /* Cambia el color de fondo del resaltado */
+    color: #122330;
+    font-weight: bold; /* Cambia el peso de la fuente del resaltado */
+}

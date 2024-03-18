@@ -1,0 +1,30 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pugna | Salida</title>
+    <link rel="stylesheet" href="{% static 'styles/logout.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon"> 
+</head>
+<body>
+    {% include 'snippets/header_welcome.html' %}
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 25vh;">
+        <h1><strong>¡Gracias por visitarnos!</strong></h1>
+        <p>¿Necesitas volver al inicio? <strong>¡Hazlo con un clic!</strong></p>
+    </div>
+    
+    <div class="row justify-content-center container-logout">
+        <div class="col-md-12">
+            <a href="{% url 'noticias:home' %}" class="boton">Volver al inicio</a>
+        </div>
+    </div>
+    {% include 'snippets/footer.html' %}
+</body>
+</html>
+
+{% endblock %}

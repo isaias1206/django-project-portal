@@ -1,0 +1,32 @@
+footer {
+    background-color: #122330; /* Color de fondo del footer */
+    color: #F49D21; /* Color del texto en el footer */
+    padding: 40px; /* Espaciado interno */
+    text-align: center; /* Texto centrado */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Margen inferior para separar los íconos del resto del contenido */
+}
+
+.footer-icons i {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #F49D21;
+}
+
+.footer-icons a {
+        margin: 0 10px; /* Margen horizontal entre los íconos */
+        color: #122330; /* Color de los íconos */
+        text-decoration: none; /* Quitar subrayado de los enlaces */
+}
+
+
+footer p {
+    color: #F49D21;
+    text-align: center;
+}

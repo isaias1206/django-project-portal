@@ -1,0 +1,65 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mundo Pugna | Resultados del filtro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/resultados_filtro.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+<body>
+    {% include 'snippets/header.html' %}
+    {% include 'snippets/logout_button.html' %}
+<div class="container">
+    <div class="container mt-5 custom-container">
+        <h1><strong>Resultados del filtro</strong></h1>
+    </div>
+    <p style="font-size: 20px;">Resultados por:</p>
+    <ul style="list-style-type: disc; font-size: 20px;">
+        {% for fuente in fuentes_seleccionadas %}
+            <li><strong>{{ fuente }}</strong></li>
+        {% endfor %}
+    </ul>
+    <p style="font-size: 20px;">Resultados encontrados: <strong>{{ noticias.count }}</strong></p>
+    <div class="row">
+        {% for noticia in noticias %}
+            {% if noticia.publicada %}
+            <div class="card">
+                <div class="card-img">
+                    <a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}">
+                        <img src="{{ noticia.urlimagen }}" alt="Imagen de la noticia" width="350px" height="250px">
+                    </a>
+                </div>
+    
+                <div class="card-content">
+                    {% for fuente in noticia.fuente.all %}
+                        <p class="nfuente"><strong>{{ fuente }}</strong></p>
+                    {% endfor %}
+                    <h1 class="title" style="text-align: center;">
+                        <strong><a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}">{{ noticia.titular }}</a></strong>
+                    </h1>
+                    <p class="content">{{ noticia.contenido|slice:":200" }}{% if noticia.contenido|length > 200 %}...{% endif %}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+    
+    
+
+
+{% include 'snippets/footer.html' %}
+</body>
+</html>
+
+{% endblock %}

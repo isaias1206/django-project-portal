@@ -1,0 +1,8 @@
+{% load static %}
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="{% static 'styles/logout.css' %}">
+
+<a href="{% url 'noticias:logout' %}" class="logout-icon" title="Salir">
+    <i class='bx bxs-exit' style="font-size: 50px; color: #F49D21;"></i>
+</a>

@@ -1,0 +1,23 @@
+.container-fluid{
+    margin-bottom: 40px;
+
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #F49D21;
+}
+
+.nav-link:hover {
+    color: #F49D21;
+}
+
+.nav-link.active {
+    background-color: #F49D21;
+    color: #FEEEE1;
+}

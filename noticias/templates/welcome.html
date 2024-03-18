@@ -1,0 +1,105 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pugna | Bienvenida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon"> 
+    <link rel="stylesheet" href="{% static 'styles/welcome.css' %}">
+</head>
+<body>
+
+{% include 'snippets/header.html' %}
+
+<div class="container">
+    <div class="container mt-5 custom-container">
+        <h1>Bienvenido a <strong>Mundo Pugna</strong></h1>
+    </div>
+    <div class="introduccion">
+        <p>Nos complace presentarte nuestro ambicioso proyecto estudiantil, un portal de noticias dedicado a la difusión de información sobre el conflicto bélico entre Rusia y Ucrania. Buscamos proporcionar una plataforma informativa precisa, imparcial y de fácil acceso para mantener a la sociedad informada sobre eventos críticos que tienen un impacto significativo en nuestra realidad.
+        </p>
+        <br>
+    <ul>
+        <li style="list-style: none;">
+            <img src="{% static 'images/diversity.png' %}" alt="Estructura">
+            <div style="text-align: center; align-items: center;">
+                <h3 class="atributo mb-3"><strong>Estructura</strong></h3>
+                <p class="texto mb-3">Nos caracterizamos por presentar una organización cuidadosa y un diseño intuitivo.</p>
+            </div>
+
+        </li>
+
+        <li style="list-style: none;">
+            <img src="{% static 'images/interactive.png' %}" alt="Interactividad">
+            <div style="text-align: center; align-items: center;">
+                <h3 class="atributo mb-3"><strong>Interactividad</strong></h3>
+                <p class="texto mb-3">Ofrecemos una experiencia interactiva a nuestros usuarios.</p>
+            </div>
+        </li>
+
+        <li style="list-style: none;">
+            <img src="{% static 'images/structure.png' %}" alt="Diversidad de fuentes">
+            <div style="text-align: center; align-items: center;">
+                <h3 class="atributo mb-3"><strong>Diversidad de fuentes</strong></h3>
+                <p class="texto mb-3">Fomentamos la diversidad de opiniones a través de la selección de fuentes de información diversas.</p>
+            </div>
+
+        </li>
+    </ul>
+    </div>
+    <div class="mission-vision-container">
+        <div class="mission-vision-item">
+          <div class="mission-vision-icon-container">
+            <i class="fa-solid fa-crosshairs mission-vision-icon"></i>
+          </div>
+          <h3 class="mission-vision-text"><strong>Misión</strong></h3>
+          <div class="mission-vision-text-container">
+            <p class="p-3" style="font-style: italic;">Nuestra misión es informar de manera precisa sobre el conflicto entre Rusia y Ucrania, ofreciendo una perspectiva estudiantil comprometida. Aspiramos a promover la comprensión integral de los desafíos planteados, proporcionando contenido riguroso.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mission-vision-container">
+        <div class="mission-vision-item">
+          <div class="mission-vision-icon-container">
+            <i class="fa-solid fa-eye mission-vision-icon"></i>
+          </div>
+          <h3 class="mission-vision-text"><strong>Visión</strong></h3>
+          <div class="mission-vision-text-container">
+            <p class="p-3" style="font-style: italic;">Aspiramos a ser un referente en la difusión de noticias sobre el conflicto entre Rusia y Ucrania desde la óptica estudiantil. Buscamos ser reconocidos por nuestro compromiso con la verdad y la integridad periodística.</p>
+          </div>
+        </div>
+      </div>
+    <div class="fuentes row">
+        <div class="col-md-12">
+                <p>Seleccionamos fuentes internacionales como <a href="https://cnnespanol.cnn.com/" target="_blank">CNN</a>, <a href="https://news.un.org/es/" target="_blank">ONU</a> y <a href="https://www.bbc.com/" target="_blank">BBC</a> junto con <a href="https://www.ukrinform.es/" target="_blank">Ukrinform</a>, asegurando, de esta manera, la integridad, la diversidad y el equilibrio informativo.</p>
+                <p>Este proyecto no solo busca informar, sino también fomentar la conciencia global y promover la reflexión crítica sobre el conflicto entre Rusia y Ucrania. <strong>¡Bienvenido a nuestra comunidad informativa!</strong></p>
+                <p>Te invitamos a explorar y aprender. Juntos, construyamos una comprensión más profunda de las dinámicas que impactan al mundo.</p>
+        </div>
+    </div>
+    <br>
+    <div class="input row">
+        <div class="input col-md-6">
+            <a href="{% url 'noticias:home' %}" class="boton">Ver noticias</a>
+        </div>
+    </div>
+
+</div>
+    <br><br><br><br>
+
+    {% include 'snippets/footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% endblock %}

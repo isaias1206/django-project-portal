@@ -1,0 +1,105 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pugna | Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon"> 
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    {% include 'snippets/header.html' %}
+    {% include 'snippets/logout_button.html' %}
+    <div class="container">
+        {% include 'snippets/category.html' %}
+        {% include 'snippets/navbar.html' %}
+        <div class="row-principal justify-content-center">
+            <div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 text-center">
+                <div class="row">
+                    {% for noticia in noticias_publicadas %}
+                        {% if forloop.first %}
+                            <div class="card-first">
+                                <div class="card-img-first">
+                                    <a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}">
+                                        <img src="{{ noticia.urlimagen }}" alt="Imagen de la noticia" class="image">
+                                    </a>
+                                </div>
+                                <div class="card-content-first">
+                                    {% for fuente in noticia.fuente.all %}
+                                            <p class="nfuente-first"><strong>{{ fuente.nfuente }}</strong></p>
+                                    {% endfor %}
+                                    <h1 class="title-first"><strong><a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}">{{ noticia.titular }}</a></strong></h1>
+                                    <p class="content-first">{{ noticia.contenido|slice:":200" }}{% if noticia.contenido|length > 200 %}...{% endif %}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for noticia in noticias_publicadas %}
+                {% if not forloop.first %}
+                    <div class="card">
+                        <div class="card-img">
+                            <a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}"><img src="{{ noticia.urlimagen }}" alt="Imagen de la noticia" width="350px" height="250px" ></a>
+                        </div>
+                        <div class="card-content">
+                            {% for fuente in noticia.fuente.all %}
+                                <p class="nfuente"><strong>{{ fuente.nfuente }}</strong></p>
+                            {% endfor %}
+                            <h1 class="title" style="text-align: center;"><strong><a href="{% url 'noticias:noticia_detail' noticia_id=noticia.id %}">{{ noticia.titular }}</strong></a></h1>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% if noticias_publicadas.has_previous %}
+                    <a href="?page=1" style="text-decoration: none; color: #122330; font-size: 20px;">&laquo; Primera</a>
+                    <a href="?page={{ noticias_publicadas.previous_page_number }}" style="text-decoration: none; color: #122330; font-size: 20px;"><strong>Anterior |</strong></a>
+                {% endif %}
+    
+                <span class="current" style="font-size: 20px;">
+                    Página {{ noticias_publicadas.number }} de {{ noticias_publicadas.paginator.num_pages }}
+                </span>
+    
+                {% if noticias_publicadas.has_next %}
+                    <a href="?page={{ noticias_publicadas.next_page_number }}" style="text-decoration: none; color: #122330; font-size: 20px;"><strong>| Siguiente</strong></a>
+                    <a href="?page={{ noticias_publicadas.paginator.num_pages }}" style="text-decoration: none; color: #122330; font-size: 20px;"> Última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+            <form method="GET" action="{% url 'noticias:resultados_filtro' %}" class="filter-form">
+                <fieldset class="filter-fieldset">
+                    <legend class="filter-legend" style="text-align: center;">Seleccionar fuente:</legend>
+                    <select name="fuente" multiple class="filter-select">
+                        <option value="CNN Español">CNN</option>
+                        <option value="BBC">BBC</option>
+                        <option value="ONU">ONU</option>
+                        <option value="Ukrinform">Ukrinform</option>
+                    </select>
+                </fieldset>
+                <button type="submit" class="filter-button">Filtrar</button>
+            </form>
+        <form method="GET" action="{% url 'noticias:resultados_palabra_clave' %}">
+            <input type="text" name="q" placeholder="Buscar palabra clave..." style="border-radius: 5px; border-color: #122330; padding: 10px; border-width: 3px; border-style: solid; background-color: transparent;">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    {% include 'snippets/footer.html' %}
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+.boton {
+    background-color: #122330;
+    color: #F59E22;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #F59E22;
+    color: #122330;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: #FEEEE1;
+    color: #122330;
+    margin: 0;
+}
+
+.container-logout{
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.logout-icon {
+    position: absolute; /* Para que el icono se mantenga fijo en la ventana del navegador */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la derecha */
+    z-index: 999; /* Ajusta la capa z para que esté por encima de otros elementos */
+    display: block; /* Asegura que el icono sea visible */
+}
+
+
+
+/* body h2 {
+    color: #122330;
+} */

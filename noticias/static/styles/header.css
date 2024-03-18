@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #122330;
+    margin-bottom: 40px;
+}  
+
+header img {
+    margin: auto;
+    display: block;
+}
+
+.navbar .nav-link {
+    margin-right: 15px; /* Ajusta el espacio entre los elementos de la barra de navegación */
+}
+
+.logout-icon {
+    position: fixed; /* Utiliza position: fixed en lugar de position: absolute para que el icono se mantenga fijo en la ventana del navegador */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la derecha */
+    z-index: 999; /* Ajusta la capa z para que esté por encima de otros elementos */
+    display: block;
+}

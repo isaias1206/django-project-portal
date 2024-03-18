@@ -1,0 +1,62 @@
+.form {
+    margin: 0 auto;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.custom-container {
+        text-align: center;
+        color: #122330;
+}
+.container {
+    width: 100%;
+    max-width: 1200px; /* Opcional: ajusta el ancho máximo de la tabla */
+    margin: 0 auto; /* Centra el contenido */
+    padding: 20px;
+}
+.table-container {
+    overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si la tabla es demasiado ancha */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Evita el ajuste de texto */
+    overflow: hidden; /* Oculta el desbordamiento de texto */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto desborda la celda */
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: white;
+    color: #122330;
+}
+
+.extractor {
+    background-color: #122330;
+    color: #F49D21;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+    text-decoration: none;
+    
+}
+
+.extractor:hover {
+    background-color: #F49D21;
+    color: #122330;
+}

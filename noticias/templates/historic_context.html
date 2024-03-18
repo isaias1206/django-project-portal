@@ -1,0 +1,101 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pugna | Contexto histórico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'styles/historic_context.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/noticia_detail.css' %}">
+</head>
+<body>
+    {% include 'snippets/header.html' %}
+    {% include 'snippets/logout_button.html' %}
+
+<div class="container">
+    {% include 'snippets/category.html' %}
+    {% include 'snippets/navbar.html' %}
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand navbar-light" style="align-items: center; justify-content: center; text-align: center;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-underline" id="nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#antecedentes" style="font-size: 20px; color: #122330; text-decoration: none;"><strong>Antecedentes</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#desarrollo" style="font-size: 20px; color: #122330; text-decoration: none;"><strong>Desarrollo</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#consecuencias" style="font-size: 20px; color: #122330; text-decoration: none;"><strong>Consecuencias</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 col-xxl-12">
+            <div class="imagen mb-4">
+                <img src="{% static 'images/f.elconfidencial.com_original_ced_69a_610_ced69a6109b03c6ac7032c8342660a62.jpg' %}" alt="Hombre sentado sobre un tanque de guerra ruso" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="newsTitle" style="text-align: left;">Análisis histórico: Raíces del conflicto entre Rusia y Ucrania</h1>
+            <h5 class="datePublication mb-1" style="text-align: left;"><strong>Fecha de publicación:</strong> 5 de Marzo de 2024, 7:18 p.m.</h5>
+            <h5 class="newsAutors mb-4" style="text-align: left;"><strong>Autores:</strong> Redacción de Mundo Pugna</h5>
+        </div>
+    </div>
+    <div class="container row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 col-xxl-12">
+            <p class="content mb-4">El conflicto entre Rusia y Ucrania, arraigado en una rica pero tumultuosa historia compartida, ha emergido como un episodio crucial en el escenario geopolítico contemporáneo. Desde la independencia de Ucrania en 1991 hasta la anexión de Crimea en 2014, este enfrentamiento ha evolucionado en un complejo entramado de tensiones políticas, culturales y territoriales. El trasfondo de esta disputa abarca siglos de interacciones entre ambas naciones, marcadas por periodos de cooperación y desavenencias. Nuestro sitio web busca arrojar luz sobre los antecedentes, eventos clave y las consecuencias en curso de este conflicto, proporcionando una plataforma informativa para aquellos que buscan comprender a fondo las dinámicas que han definido esta contienda contemporánea.</p>
+    
+            <h2 id="antecedentes" class="mb-3"><strong>▶ Antecedentes</strong> históricos que desencadenaron el conflicto entre Rusia y Ucrania</h2>
+    
+            <p class="content mb-3">El conflicto entre Ucrania y Rusia se origina en una intrincada red de antecedentes históricos, marcada por una relación compleja y entrelazada a lo largo de los siglos. Después de la disolución de la Unión Soviética en 1991, Ucrania proclamó su independencia, un paso que suscitó preocupaciones considerables en Rusia. Estas preocupaciones se arraigaban en las profundas conexiones culturales, políticas y económicas que existían entre ambas naciones.</p>
+    
+            <p class="content mb-3">Un punto de inflexión crítico ocurrió en 2014 con la anexión de Crimea por parte de Rusia, un acto que exacerbó aún más las tensiones preexistentes. Este evento desencadenó un conflicto armado en el este de Ucrania, donde las fuerzas gubernamentales se enfrentaron a separatistas respaldados por Rusia. Las consecuencias fueron devastadoras, con miles de víctimas y un significativo desplazamiento de la población.</p>
+    
+            <p class="content mb-4">El conflicto ha desencadenado respuestas a nivel internacional, incluyendo sanciones contra Rusia. A pesar de los esfuerzos diplomáticos continuos, una resolución definitiva sigue siendo esquiva hasta la fecha. Este contexto histórico constituye la base de un conflicto en constante evolución que merece ser comprendido en su complejidad. En nuestro sitio, explorarás análisis detallados y actualizaciones para obtener una visión más completa de los antecedentes y las dinámicas actuales de esta situación.</p>
+    
+            <h2 id="desarrollo" class="mb-3"><strong>▶ Desarrollo</strong> del conflicto</h2>
+    
+            <p class="content mb-3">El desarrollo del conflicto entre Rusia y Ucrania ha sido una trama compleja y multifacética, influenciada por una historia compartida que se remonta siglos atrás. Tras la declaración de independencia de Ucrania en 1991, las relaciones entre ambos países se vieron afectadas por la desconfianza y la percepción de Rusia hacia este paso unilateral. Las tensiones alcanzaron su punto álgido con la anexión de Crimea por parte de Rusia en 2014, un acto que desencadenó un conflicto armado en el este de Ucrania entre fuerzas gubernamentales y separatistas respaldados por Rusia.</p>
+    
+            <p class="content mb-3">Este conflicto, caracterizado por intensos enfrentamientos y repercusiones geopolíticas significativas, ha dejado a su paso miles de víctimas, desplazados y una serie de sanciones internacionales contra Rusia. Los esfuerzos diplomáticos para encontrar una solución definitiva han sido continuos, pero hasta la fecha, persisten los desafíos para lograr una resolución duradera.</p>
+    
+            <p class="content mb-4">Nuestro objetivo es proporcionar un análisis detallado y objetivo de los eventos que han definido este conflicto, destacando las complejidades históricas, las dinámicas políticas y las implicaciones a nivel global. A través de esta plataforma, buscamos ofrecer una comprensión completa de un conflicto que sigue teniendo un impacto significativo en la región y más allá.</p>
+    
+            <h2 id="consecuencias" class="mb-3"><strong>▶ Consecuencias</strong> del conflicto entre Rusia y Ucrania: Impacto profundo y prolongado</h2>
+    
+            <p class="content mb-3">El conflicto entre Rusia y Ucrania ha dejado una estela de consecuencias profundas y duraderas que abarcan diversas dimensiones, desde pérdidas humanas y desplazamientos masivos hasta implicaciones geopolíticas y económicas a nivel internacional. La anexión de Crimea en 2014 y el conflicto armado en el este de Ucrania han desencadenado una crisis humanitaria, dejando miles de muertos, heridos y un elevado número de personas desplazadas.</p>
+    
+            <p class="content mb-3">A nivel geopolítico, la situación ha generado tensiones significativas, resultando en sanciones económicas y políticas impuestas a Rusia por parte de la comunidad internacional. Estas medidas han afectado la economía rusa y han contribuido a una reconfiguración de las relaciones internacionales en la región.</p>
+    
+            <p class="content mb-3">Económicamente, el conflicto ha tenido un impacto negativo en ambas naciones, afectando sectores clave como el comercio, la inversión y la infraestructura. La incertidumbre política y militar ha creado desafíos adicionales para la estabilidad económica en la región.</p>
+    
+            <p class="content mb-3">Además, las consecuencias sociales y culturales han dejado cicatrices difíciles de sanar. La polarización en Ucrania, las divisiones étnicas y la desconfianza entre comunidades han generado un ambiente tenso que requiere esfuerzos sostenidos para la reconciliación.</p>
+    
+            <p class="content mb-5">En este contexto, es esencial comprender las múltiples facetas de las consecuencias derivadas de este conflicto, no solo para documentar el impacto histórico sino también para contribuir a la búsqueda de soluciones que promuevan la estabilidad y la paz en la región.</p>
+        </div>
+    </div>   
+</div>
+   
+
+    {% include 'snippets/footer.html' %}
+
+</body>
+</html>
+
+{% endblock %}

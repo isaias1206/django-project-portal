@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: #FEEEE1;
+}
+
+body p {
+    font-size: 24px;
+    color: #122330;
+    text-align: justify;
+}
+
+body ul li {
+    font-size: 20px;
+    color: #122330;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute the elements uniformly */
+}
+  
+li {
+    width: calc(33.33% - 10px); /* To display three elements in a row */
+    margin-bottom: 20px; /* Space between rows */
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex; /* Add this line to make the li a flex container */
+    flex-direction: column; /* Add this line to align text vertically */
+    align-items: center; /* Center the text horizontally */
+    text-align: center; /* Add this line to center the text inside the div */
+}
+  
+img {
+    width: 210px; /* Increase the image size */
+    height: auto; /* Maintain the proportion */
+}
+  
+@media (max-width: 768px) {
+    li {
+      width: calc(50% - 10px); /* Display two elements in a row on smaller devices */
+    }
+}
+  
+@media (max-width: 480px) {
+    li {
+      width: 100%; /* Display one element per row on very small devices */
+    }
+}
+  
+.atributo{
+    text-align: center;
+}
+
+.texto{
+    text-align: center;
+}
+
+.mission-vision-container {
+    display: flex;
+    align-items: flex-start; /* Change this to align the icon and text to the top */
+    text-align: left;
+    margin-bottom: 1rem;
+}
+  
+.mission-vision-item {
+    display: flex;
+    flex-direction: column; /* Change this to stack the icon, title, and text vertically */
+    align-items: center;
+    gap: 1rem;
+}
+  
+.mission-vision-icon {
+    font-size: 5.5rem;
+}
+  
+.mission-vision-text {
+    margin: 0;
+}
+  
+.mission-vision-text-container {
+    text-align: center;
+}
+
+h1 {
+    padding: 25px;
+}
+
+.custom-container {
+    text-align: center;
+    color: #122330;
+}
+
+.introduccion {
+    padding: 35px;
+}
+
+.mision {
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    color: #122330;
+}
+
+.fuentes {
+    padding: 20px;
+    font-size: 24px;
+    color: #122330;
+    text-align: center;
+}
+
+.fuentes a {
+    color: #122330;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.conclusion {
+    padding: 20px;
+    text-align: center;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    background-color: #122330;
+    color: #F49D21;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #F49D21;
+    color: #122330;
+}

@@ -1,0 +1,265 @@
+.title a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto de su contenedor */
+}
+
+.container h1 {
+    color: #122330;
+    padding: 20px;   
+}
+
+.container h3 {
+    text-align: center;
+    font-weight: bold;
+    color: #122330;
+    padding: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0; /* Opcional: quita el espacio interno de la lista */
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Establece la dirección de los elementos flexibles como columna */
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px; /* Añade un margen inferior a la imagen */
+}
+
+.card-content {
+    flex: 1; /* Permite que el contenido ocupe todo el espacio restante en la tarjeta */
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: #FEEEE1;
+    color: #122330;
+}
+
+.row-principal {
+    max-width: 950px;
+}
+
+.row-principal img {
+    max-width: 100%;
+    border-radius: 20px;
+    border: solid  #122330;
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+}
+
+.row-principal h2 {
+    text-align: center;
+}
+
+.nfuente {
+    margin: 15px 40px; /* Centra el contenedor horizontalmente en la página */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 10px;
+    background-color: #122330;
+    border-radius: 5px;
+    color: #F49D21;
+}
+
+.title {
+    margin-bottom: 40px solid #122330;
+}
+
+.content {
+    text-align: center;
+}
+
+.card {
+    background-color: transparent;
+    border-color: #122330;
+    border-width: 2.5px;
+}
+
+.card-img-first {
+    padding: 20px;
+}
+
+.card-first {
+    background-color: transparent;
+}
+
+.card-content-first p {
+    text-align: center;
+    padding: 10px;
+}
+
+.nfuente-first {
+    margin: 15px 40px; /* Centra el contenedor horizontalmente en la página */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 10px;
+    background-color: #122330;
+    border-radius: 5px;
+    color: #F49D21;
+}
+
+.title-first {
+    margin-bottom: 40px solid #122330;
+}
+
+.content-first {
+    text-align: center;
+}
+
+.title-first a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto de su contenedor */
+}
+
+.card-img img {
+    margin: 0 auto;
+    display: block;
+    max-width: 1000px;
+    min-width: 320px;
+    height: auto;
+    width: 75vw;
+    border-radius: 5px;
+    border: solid #122330;
+}
+
+.card-content p {
+    text-align: center;
+    padding: 10px;
+}
+
+.img {
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+}
+
+.row-navbar {
+    background-color: #122330;
+    padding: 20px;
+}
+
+
+
+form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+legend {
+    font-weight: bold;
+    color: #122330;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    background-color: #122330;
+    color: #f49d21;
+    border: 2px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+label:hover {
+    background-color: #F49D21;
+    color: #122330;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #f49d21; /* Naranja */
+    color: #122330;
+    border-color: #f49d21;
+}
+
+button[type="submit"] {
+    background-color: #F49D21; /* Azul */
+    color: #122330;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #122330; /* Azul oscuro */
+    color: #f49d21;
+}
+
+.filter-form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.filter-fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.filter-legend {
+    font-weight: bold;
+    color: #122330;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.filter-select {
+    display: block;
+    width: 100%;
+    border: 2px solid #122330;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.filter-button {
+    background-color: #F49D21;
+    color: #122330;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+}
+
+.filter-button:hover {
+    background-color: #122330;
+    color: #F49D21;
+}
+
+a {
+    text-decoration: none;
+}

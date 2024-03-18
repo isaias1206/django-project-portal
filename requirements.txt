@@ -1,0 +1,14 @@
+beautifulsoup4==4.12.3
+Django==4.0
+googletrans==4.0.0rc1
+psycopg==3.1.18
+psycopg2==2.9.9
+pycparser==2.21
+python3-openid==3.2.0
+requests==2.31.0
+selenium==4.17.2
+social-auth-app-django==5.4.0
+social-auth-core==4.5.3
+soupsieve==2.5
+sqlparse==0.4.4
+urllib3==2.2.0

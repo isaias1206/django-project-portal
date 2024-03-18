@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #FEEEE1;
+    margin: 0;
+}
+
+.newsContent {
+    margin-bottom: 15px;
+}
+
+.col-img {
+    max-width: 950px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 20px 0;
+}
+
+.col-img img {
+    max-width: 100%; /* Asegura que la imagen no supere el ancho del contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    border-radius: 20px;
+    border: solid  #122330;
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+}
+
+.container h1 {
+    text-align: center;
+    padding: 15px;
+    color: #122330;
+}
+
+.row-fuente {
+    margin: 0 40px; /* Centra el contenedor horizontalmente en la página */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 10px;
+    background-color: #122330;
+    border-radius: 5px;
+}
+
+.row-fuente p {
+    color: #F59E22;
+}
+
+.row-extraccion p {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.row-content {
+    padding: 10px;
+    line-height: 30px;
+    white-space: pre-line;
+    font-size: 20px;
+}
+
+.row-content p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.row-enlace {
+    background-color: #122330;
+    align-items: center;
+    margin: 10px 40px; /* Centra el contenedor horizontalmente en la página */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.container a {
+    text-decoration: none;
+    color: #F59E22;
+}
+
+.icon-container {
+    display: flex; /* Utiliza flexbox para alinear los iconos */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.icon-container > div {
+    margin: 0 10px; /* Espacio entre los iconos */
+    cursor: pointer;
+}
+
+.icon {
+    display: inline-block; /* Para que los iconos se muestren en línea */
+    margin: 0 10px; /* Espacio entre los iconos */
+    cursor: pointer;
+}
+
+.icon::after {
+    content: '|'; /* Agrega un separador entre los iconos */
+    margin-left: 5px; /* Espacio entre los iconos y el separador */
+    margin-right: 5px; /* Espacio entre los iconos y el separador */
+    color: #122330; /* Color del separador */
+}
+
+.icon:last-child::after {
+    content: ''; /* Elimina el separador del último icono */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px); /* Ajusta la posición para que aparezca debajo del icono */
+    left: 50%; /* Centra el menú horizontalmente */
+    transform: translateX(-50%); /* Ajusta el menú a la posición centrada */
+    background-color: #122330; /* Color de fondo del menú */
+
+
+    border-radius: 5px; /* Borde redondeado */
+    padding: 10px; /* Espaciado interno */
+    display: none; /* Oculta el menú por defecto */
+    z-index: 999; /* Ajusta la capa z para que esté por encima de otros elementos */
+}
+
+.dropdown-menu li {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+}
+
+.dropdown-menu li a {
+    display: block; /* Hace que los enlaces ocupen todo el ancho del menú */
+    padding: 5px 10px; /* Espaciado interno */
+    color: #F49D21; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #FEEEE1; /* Cambia el color de fondo al pasar el cursor */
+    border-radius: 5px;
+}

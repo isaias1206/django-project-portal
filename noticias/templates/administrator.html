@@ -1,0 +1,167 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pugna | Administrador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="{% static 'assets/isotipo.ico' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/administrator.css' %}">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="container mt-5 custom-container">
+            <h1><strong>Panel administrativo</strong></h1>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <colgroup>
+                    <col style="width: 10%">
+                    <col style="width: 10%">
+                    <col style="width: 10%">
+                    <col style="width: 20%">
+                    <col style="width: 10%">
+                    <col style="width: 25%"> <!-- Aumenta el ancho de la columna de contenido -->
+                    <col style="width: 10%">
+                    <col style="width: 5%"> <!-- Reduce el ancho de la columna de publicada -->
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>URL de la imagen</th>
+                        <th>Nombre de la fuente</th>
+                        <th>Enlace</th>
+                        <th>Titular</th>
+                        <th>Autores</th>
+                        <th>Contenido</th>
+                        <th>Fecha de extracción</th>
+                        <th>Publicada</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for noticia in noticias %}
+                    <tr>
+                        <td><img src="{{ noticia.urlimagen }}" alt="Imagen de la noticia" style="height: auto; max-width: 150px;"></td>
+                        <td>
+                        {% for fuente in noticia.fuente.all %}
+                            <span>{{ fuente.nfuente }}</span>
+                        {% endfor %}
+                        </td>
+                        <td><a href="{{ noticia.enlace }}">{{ noticia.enlace|slice:":20" }}{% if noticia.contenido|length > 20 %}...{% endif %}</a></td>
+                        <td>{{ noticia.titular }}</td>
+                        <td>{{ noticia.autores }}</td>
+                        <td><p>{{ noticia.contenido|slice:":20" }}{% if noticia.contenido|length > 20 %}...{% endif %}</p></td>
+                        <td>{{ noticia.fextraccion }}</td>
+                        <td>{{ noticia.publicada }}</td>
+                        <td>
+                            {% if noticia.publicada %}
+                                <form class="despublicar-form" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="noticia_id" value="{{ noticia.id }}">
+                                    <button type="submit" name="despublicar" class="btn btn-danger despublicar-button">Despublicar</button>
+                                </form>
+                            {% else %}
+                                <form class="publicar-form" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="noticia_id" value="{{ noticia.id }}">
+                                    <button type="submit" name="publicar" class="btn btn-primary publicar-button">Publicar</button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form method="post" id="scrape-form" class="form">
+                {% csrf_token %}
+                <button class="extractor" type="button" id="scrape-button" class="boton">Extraer noticias</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Agrega un evento de clic al botón de "Scrapear"
+    document.getElementById('scrape-button').addEventListener('click', function () {
+        // Realiza una solicitud POST al endpoint de tu vista para ejecutar los scrapers
+        fetch('{% url "noticias:scrape_noticias" %}', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => {
+            // Verifica si la respuesta es exitosa
+            if (!response.ok) {
+                throw new Error('Hubo un problema al ejecutar los scrapers');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Realiza acciones adicionales si es necesario, como mostrar un mensaje de éxito
+            console.log('Los scrapers se ejecutaron con éxito');
+            // Recargar la página o hacer cualquier otra acción necesaria después de ejecutar los scrapers
+            window.location.reload();
+        })
+        .catch(error => {
+            // Maneja cualquier error que ocurra durante el proceso
+            console.error('Error al ejecutar los scrapers:', error);
+            // Maneja el error si es necesario
+        });
+    });
+
+    // Selecciona todos los botones de despublicar
+    document.querySelectorAll('.despublicar-button').forEach(button => {
+        // Agrega un evento de clic a cada botón de despublicar
+        button.addEventListener('click', function () {
+            // Encuentra el formulario asociado al botón de despublicar
+            const form = button.closest('.despublicar-form');
+            // Obtiene el ID de la noticia de un campo oculto en el formulario
+            const noticiaId = form.querySelector('input[name="noticia_id"]').value;
+            // Realiza una solicitud POST al servidor para despublicar la noticia
+            fetch('/despublicar-noticia/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                },
+                body: JSON.stringify({ 'noticia_id': noticiaId }),
+            })
+            .then(response => {
+                // Verifica si la respuesta es exitosa
+                if (!response.ok) {
+                    throw new Error('Hubo un problema al despublicar la noticia');
+                }
+                // Recarga la página después de despublicar la noticia
+                window.location.reload();
+            })
+            .catch(error => {
+                // Maneja cualquier error que ocurra durante el proceso
+                console.error('Error al despublicar la noticia:', error);
+                // Maneja el error si es necesario
+            });
+        });
+    });
+});
+
+
+</script>
+
+</html>
+
+{% endblock %}
